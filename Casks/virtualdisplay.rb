@@ -1,6 +1,6 @@
 cask "virtualdisplay" do
-  version "0.3.0"
-  sha256 "34f67a8fe3fc1f8c88870f43db735973f596b82ef9bb4ec086dc5b4604f83697"
+  version "0.3.1"
+  sha256 "219d364e45526e3e6a1d306e49350f2cf700d274274d0237fd4e10b943c25a1d"
 
   url "https://github.com/fredp46/virtualdisplay-releases/releases/download/v#{version}/VirtualDisplay-#{version}.zip"
   name "VirtualDisplay"
@@ -19,11 +19,4 @@ cask "virtualdisplay" do
   uninstall quit: "com.fredpowell.VirtualDisplay"
 
   zap trash: "~/Library/Preferences/com.fredpowell.VirtualDisplay.plist"
-
-  caveats <<~EOS
-    This preview build isn't notarized by Apple yet, so macOS blocks its first launch.
-    To allow it, open VirtualDisplay once, then click Open Anyway in
-    System Settings → Privacy & Security. Or run:
-      xattr -dr com.apple.quarantine #{appdir}/VirtualDisplay.app
-  EOS
 end
