@@ -1,6 +1,6 @@
 cask "virtualdisplay" do
-  version "0.4.0"
-  sha256 "ee607cf19386d9556450d158bb3c2a0874ebf5ff36a63edcc73f1b6e1a482131"
+  version "0.5.0"
+  sha256 "f0f784f58548ca76df8fb4c3f965424df6bdce32740d62940f65773e15baae5e"
 
   url "https://github.com/fredp46/virtualdisplay-releases/releases/download/v#{version}/VirtualDisplay-#{version}.zip"
   name "VirtualDisplay"
@@ -12,11 +12,16 @@ cask "virtualdisplay" do
     strategy :github_latest
   end
 
+  auto_updates true
   depends_on macos: :sonoma
 
   app "VirtualDisplay.app"
 
   uninstall quit: "com.fredpowell.VirtualDisplay"
 
-  zap trash: "~/Library/Preferences/com.fredpowell.VirtualDisplay.plist"
+  zap trash: [
+    "~/Library/Caches/com.fredpowell.VirtualDisplay",
+    "~/Library/HTTPStorages/com.fredpowell.VirtualDisplay",
+    "~/Library/Preferences/com.fredpowell.VirtualDisplay.plist",
+  ]
 end
