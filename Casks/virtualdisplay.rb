@@ -1,6 +1,6 @@
 cask "virtualdisplay" do
-  version "0.12.0"
-  sha256 "383a01e7e76545167fb8df7f783bfef1b5e9ea9ea49fdab04c78cd009b0c682d"
+  version "0.12.1"
+  sha256 "7d9116838950d91e258d2cb945884cd680a66340746911a8fc89fac84f55cac1"
 
   url "https://github.com/fredp46/virtualdisplay-releases/releases/download/v#{version}/VirtualDisplay-#{version}.zip"
   name "VirtualDisplay"
